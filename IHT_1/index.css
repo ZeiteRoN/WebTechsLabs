@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #f8f9fa;
+    color: #222;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+.header {
+    grid-area: header;
+    background: #243763;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1.2rem;
+    font-weight: 500;
+}
+
+.nav a:hover {
+    color: #ffce45;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background: #e9ecef;
+    padding: 1.5rem;
+}
+
+.sidebar h2 {
+    margin-bottom: 1rem;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin-bottom: 0.8rem;
+}
+
+.sidebar a {
+    color: #243763;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.sidebar a:hover {
+    color: #ff8c00;
+}
+
+.content {
+    grid-area: content;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.intro {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.intro button {
+    background: #243763;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+}
+
+.intro button:hover {
+    background: #ff8c00;
+}
+
+.books {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1.5rem;
+}
+
+.book {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.book img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.book h3 {
+    margin: 0.8rem 0 0.4rem;
+    color: #243763;
+}
+
+.book p {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.footer {
+    grid-area: footer;
+    text-align: center;
+    background: #243763;
+    color: white;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-areas:
+      "header"
+      "content"
+      "sidebar"
+      "footer";
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        text-align: center;
+    }
+
+    .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav a {
+        margin: 0.5rem;
+    }
+}
